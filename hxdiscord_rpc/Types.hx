@@ -1,16 +1,16 @@
 package hxdiscord_rpc;
 
-#if !cpp
+#if (!cpp)
 #error 'Discord RPC supports only C++ target platforms.'
 #end
 
 class Types {} // blank
 
-@:buildXml('<include name="${haxelib:hxdiscord_rpc}/project/Build.xml" />')
-@:include('discord_rpc.h')
+@:build(hxdiscord_rpc.macros.Macro.includeXml('hxdiscord_rpc', "project/Build.xml"))
+@:include("discord_rpc.h")
 @:unreflective
 @:structAccess
-@:native('DiscordRichPresence')
+@:native("DiscordRichPresence")
 extern class DiscordRichPresence
 {
 	@:native('DiscordRichPresence')
@@ -34,11 +34,11 @@ extern class DiscordRichPresence
 	var instance:cpp.Int8;
 }
 
-@:buildXml('<include name="${haxelib:hxdiscord_rpc}/project/Build.xml" />')
-@:include('discord_rpc.h')
+@:build(hxdiscord_rpc.macros.Macro.includeXml('hxdiscord_rpc', "project/Build.xml"))
+@:include("discord_rpc.h")
 @:unreflective
 @:structAccess
-@:native('DiscordUser')
+@:native("DiscordUser")
 extern class DiscordUser
 {
 	@:native('DiscordUser')
@@ -50,11 +50,11 @@ extern class DiscordUser
 	var avatar:cpp.ConstCharStar;
 }
 
-@:buildXml('<include name="${haxelib:hxdiscord_rpc}/project/Build.xml" />')
-@:include('discord_rpc.h')
+@:build(hxdiscord_rpc.macros.Macro.includeXml('hxdiscord_rpc', "project/Build.xml"))
+@:include("discord_rpc.h")
 @:unreflective
 @:structAccess
-@:native('DiscordEventHandlers')
+@:native("DiscordEventHandlers")
 extern class DiscordEventHandlers
 {
 	@:native('DiscordEventHandlers')
