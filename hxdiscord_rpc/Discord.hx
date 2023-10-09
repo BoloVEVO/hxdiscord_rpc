@@ -1,16 +1,15 @@
 package hxdiscord_rpc;
 
-#if (!cpp && macro)
+#if !cpp
 #error 'Discord RPC supports only C++ target platforms.'
 #end
 import hxdiscord_rpc.Types;
 
 @:build(hxdiscord_rpc.macros.Macro.includeXml('hxdiscord_rpc', "project/Build.xml"))
-@:include("discord_rpc.h")
-@:include("discord_register.h")
+@:include('discord_rpc.h')
+@:include('discord_register.h')
 @:unreflective
-extern class Discord
-{
+extern class Discord {
 	@:native('DISCORD_REPLY_NO')
 	static var REPLY_NO:Int;
 
@@ -27,7 +26,8 @@ extern class Discord
 	static var PARTY_PUBLIC:Int;
 
 	@:native('Discord_Initialize')
-	static function Initialize(applicationId:cpp.ConstCharStar, handlers:cpp.RawPointer<DiscordEventHandlers>, autoRegister:Int, optionalSteamId:cpp.ConstCharStar):Void;
+	static function Initialize(applicationId:cpp.ConstCharStar, handlers:cpp.RawPointer<DiscordEventHandlers>, autoRegister:Int,
+		optionalSteamId:cpp.ConstCharStar):Void;
 
 	@:native('Discord_Shutdown')
 	static function Shutdown():Void;
