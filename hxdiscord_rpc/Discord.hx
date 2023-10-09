@@ -5,7 +5,7 @@ package hxdiscord_rpc;
 #end
 import hxdiscord_rpc.Types;
 
-@:buildXml('<include name="${haxelib:hxdiscord_rpc}/project/Build.xml" />')
+@:build(hxdiscord_rpc.macros.Macro.includeXml('hxdiscord_rpc', "project/Build.xml"))
 @:include('discord_rpc.h')
 @:include('discord_register.h')
 @:unreflective
